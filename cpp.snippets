@@ -1,0 +1,110 @@
+priority -20
+
+snippet cls "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+/*properties*/
+public:
+	${2:public vars};
+
+private:
+	${3:private vars};
+
+/*methods*/
+public:
+	${1/(\w+).*/$1/} (${4:arguments});
+	virtual ~${1/(\w+).*/$1/} ();
+
+private:
+	${5:private methods};
+
+};
+${0:}
+endsnippet
+
+snippet debug "for debugging" b
+std::cout << ${1:"you are here"} << std::endl;
+endsnippet
+
+snippet tempf "Description" b
+template<typename ${1:typename}>
+${2:functiontype} ${3:functionname}({$1} a)
+{
+  ${4:functionbody};
+}
+${0:}
+endsnippet
+
+snippet s. "std:: expansion" w
+std::${0:}
+endsnippet
+
+snippet n. "njin:: expansion" w
+njin::${0}
+endsnippet
+
+snippet pragma "pragma once" b
+#pragma once
+endsnippet
+
+snippet if "better iffing" b
+if (${1:true}) {
+	${2}
+	}
+${0}
+endsnippet
+
+snippet ife "better iffing" b
+if (${1:true}) {
+	${2}
+	} else {
+	${3}
+	}
+${0}
+endsnippet
+
+snippet fun "better fun" b
+${1:void} ${2:function_name}(${3}) {
+	${4}
+}
+${0}
+endsnippet
+
+snippet cla "An entire .h generator" b
+#pragma once
+
+/* $2 */
+class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}
+{
+private:
+	$3
+
+public:
+	$1();
+	~$1();
+};
+endsnippet
+
+snippet mfun "member function" b
+${4:void} `!p snip.rv = snip.basename`::${2:memberFunction}(${3}) {
+	${0}
+}
+endsnippet
+
+snippet Inc "include header and create constructor destructor" b
+#include "`!p snip.rv = snip.basename`.h"
+
+`!p snip.rv = snip.basename`::`!p snip.rv = snip.basename`(){
+${0}
+}
+
+`!p snip.rv = snip.basename`::~`!p snip.rv = snip.basename`(){
+${1}
+}
+
+endsnippet
+
+snippet inq "include but with quotes" b
+#include "${1}"
+${0}
+endsnippet

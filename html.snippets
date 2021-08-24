@@ -1,0 +1,26 @@
+priority -40
+
+snippet ! "comment" w
+<!-- ${1:} -->
+${2:}
+endsnippet
+
+snippet br "</br> because who needs a double" i
+</br>
+endsnippet
+
+snippet cont "container" w
+<container>
+	$1
+<container>
+endsnippet
+
+snippet card "card with class" w
+<card class="$1">
+	$2
+</card>
+endsnippet
+
+snippet var "template variable" w
+{{ @$1 }}$0
+endsnippet

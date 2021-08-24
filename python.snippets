@@ -1,0 +1,25 @@
+priority -25
+
+snippet type "type, useful when combined with visual selection" b
+print(type( ${0:${VISUAL}} ))
+endsnippet
+
+snippet clai "class with init" i
+class ${1:class_name}(${2:object}):
+	def __init__(self, ${3:args}):
+		${0}
+endsnippet
+
+snippet init "init" i
+__init__(${0}
+endsnippet
+
+snippet defft "define w type wo doc" b
+def ${1:fname}(${2:self}, ${3:}) -> ${4:type}:
+	${0}
+endsnippet
+
+snippet defi "Description" b
+def __init__(${1:self}, ${2:}):
+	${0}
+endsnippet

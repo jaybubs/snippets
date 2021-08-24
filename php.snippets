@@ -1,0 +1,94 @@
+priority -40
+snippet !em "notempty" i
+!empty(${1:})$0
+endsnippet
+
+snippet is "isset" i
+isset(${1:var})$0
+endsnippet		
+
+snippet t. "$this->" i
+$this->
+endsnippet
+
+snippet pub "Public function no comment" b
+public function ${1:name}(${2:$param}) {
+	${VISUAL}${3:return null;}
+}
+$0
+endsnippet
+
+snippet pro "Public function no comment" b
+protected function ${1:name}(${2:$param}) {
+	${VISUAL}${3:return null;}
+}
+$0
+endsnippet
+
+snippet pri "Public function no comment" b
+private function ${1:name}(${2:$param}) {
+	${VISUAL}${3:return null;}
+}
+$0
+endsnippet
+
+snippet if "if function"
+if (${1:condition}) {
+	${2:$do}
+}
+$0
+endsnippet
+
+snippet br. "</br> for debugging purposes" i
+.'</br>'
+endsnippet
+#for html templating, try to begin all with ?
+snippet ? "standard php inline" i
+<?php ${1:code} ?>
+$0
+endsnippet
+
+snippet ?= "standard php inline echo" i
+<?= ${1:code} ?>
+$0
+endsnippet
+
+#for f3
+snippet ff "turns into $f3" i
+$f3
+endsnippet
+
+snippet f. "turns into $f3->" i
+$f3->
+endsnippet
+
+snippet debug "debug line" w
+echo "you got this far";
+endsnippet
+
+snippet ve "var_export for array display" w
+var_export(${1:}, TRUE);
+$0
+endsnippet
+
+snippet !e "notempty" i
+!empty(${1:})$0
+endsnippet
+
+snippet ee "empty" i
+empty(${1:})$0
+endsnippet
+
+snippet vd "wraps selection in var_dump" w
+var_dump(${0:${VISUAL}});
+endsnippet
+
+snippet mset "f3 mset array" w
+$f3->mset(array(
+$0
+));
+endsnippet
+
+snippet arel "array element" w
+'${1:}' => ${2:},$0
+endsnippet
